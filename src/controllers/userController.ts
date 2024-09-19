@@ -60,7 +60,7 @@ export const incrementAgeAction = async (req: Request, res: Response) => {
 
   if(user) {
     user.age = user.age + 1;
-    user.save();
+    await user.save();
     res.redirect("/")
   }else{
     console.log("User not found")
